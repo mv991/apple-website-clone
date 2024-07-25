@@ -7,7 +7,7 @@ import HowItWorks from "./components/HowItWorks";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <main className="bg-black">
+    <main className="bg-black ">
       <Navbar />
       <Hero />
       <Highlights />

@@ -4,8 +4,9 @@ import { useGSAP } from "@gsap/react";
 import { heroVideo, smallHeroVideo } from "../utils";
 const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(
-    window.innerHeight < 760 ? smallHeroVideo : heroVideo
+    window.innerWidth < 760 ? smallHeroVideo : heroVideo
   );
+
   const handleVideoSrcSet = () => {
     if (window.innerWidth < 760) {
       setVideoSrc(smallHeroVideo);
@@ -13,11 +14,12 @@ const Hero = () => {
       setVideoSrc(heroVideo);
     }
   };
+
   useEffect(() => {
     window.addEventListener("resize", handleVideoSrcSet);
 
     return () => {
-      window.removeEventListener("resize", handleVideoSrcSet);
+      window.removeEventListener("reisze", handleVideoSrcSet);
     };
   }, []);
   useGSAP(() => {
